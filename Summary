@@ -1,0 +1,25 @@
+
+import tkinter as tk
+import nltk
+from newspaper import Article
+
+
+url = 'https://therecord.media/apple-releases-fixes-for-two-zero-days-affecting-macs-iphones-and-ipads/'
+
+
+
+article = Article(url)
+
+article.download()
+article.parse()
+
+article.nlp()
+
+print(f'Title: {article.title}')
+print(f'Author: {article.authors}')
+print(f'Date: {article.publish_date}')
+print(f'Summary: {article.summary}')
+
+Newspaper = {'Title':article.title, 'Author':article.authors, 'Date': article.publish_date, 'Summary': article.summary}
+
+print (Newspaper)
